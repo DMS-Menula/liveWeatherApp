@@ -1,0 +1,122 @@
+:root {
+  --primary-gradient: linear-gradient(135deg, #1d2671 0%, #c33764 100%);
+  --card-bg: rgba(255, 255, 255, 0.1);
+  --card-border: rgba(255, 255, 255, 0.2);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--primary-gradient);
+  background-attachment: fixed;
+  color: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  flex: 1;
+}
+
+#cityInput {
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+#cityInput::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+#cityInput:focus {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.weather-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.weather-icon {
+  width: 100px;
+  height: 100px;
+}
+
+.detail-item {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.detail-item i {
+  font-size: 1.2rem;
+  margin-right: 5px;
+  color: #80bdff;
+}
+
+.forecast-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
+  transition: transform 0.3s ease;
+  min-width: 120px;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.forecast-icon {
+  width: 50px;
+  height: 50px;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .weather-icon {
+    width: 80px;
+    height: 80px;
+  }
+  
+  .detail-item {
+    margin-bottom: 8px;
+  }
+  
+  #temperature {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .weather-main {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .weather-icon {
+    margin-bottom: 10px;
+  }
+  
+  .detail-item {
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+  }
+  
+  #forecastTitle {
+    font-size: 1.5rem;
+  }
+}
